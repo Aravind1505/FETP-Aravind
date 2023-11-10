@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Flask Google Login Example Web Application</title>
+    <script src="../static/pattern.js"></script>
+</head>
+
+<body>
+    {% if session %}
+    <h1>Welcome {{session.userinfo.given_name}}!</h1>
+    <p><a href="{{url_for('logout')}}">Logout</a></p>
+    <!-- <div><pre>{{pretty}}</pre></div> -->
+    <div>Logged in with {{session.userinfo.email}}</div>
+    {% else %}
+    <p><a href="{{url_for('googleLogin')}}">Login with Google</a></p>
+    {% endif %}
+
+    <input type="number" max="100" min="0" placeholder="0" id="textbox"></input>
+    <button onclick="func()">Print</button>
+    <div id="pattern"></div>
+</body>
+
+</html>
